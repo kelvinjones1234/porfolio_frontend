@@ -33,14 +33,14 @@ const Hero = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="relative h-screen flex items-center z-[] px-4 sm:px-[2rem] md:px-[4rem] lg:px-[6rem] mx-auto text-white"
+      className="relative flex items-center px-4 sm:px-[2rem] md:px-[4rem] lg:px-[6rem] mx-auto text-white"
     >
       {/* Background decoration */}
       <div className="absolute top-20 right-20 w-64 h-64 border-2 border-[#98e8cd] opacity-20 rounded-full" />
       <div className="absolute top-40 right-40 w-32 h-32 bg-[#98e8cd] opacity-5 rounded-full" />
 
       {/* Grid pattern */}
-      <div className="absolute right-0 top-0 h-screen w-1/3 opacity-10">
+      <div className="absolute right-0 top-0 w-1/3 opacity-10">
         <div className="grid grid-cols-4 gap-4 h-full w-full p-8">
           {[...Array(50)].map((_, i) => (
             <div
@@ -76,7 +76,7 @@ const Hero = () => {
             a Full Stack Web Developer crafting exceptional digital experiences.
           </motion.p>
 
-          <motion.div variants={slideFromLeft} className="mt-8 sm:mt-10">
+          <motion.div variants={slideFromLeft} className="sm:mt-[6vh]">
             <motion.button
               whileHover={{ scale: 1.05, x: 10 }}
               whileTap={{ scale: 0.95 }}

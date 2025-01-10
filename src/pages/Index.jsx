@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <main className="bg-gray-900 min-h-screen">
       <Navbar />
-      <section id="home" className="h-screen">
+      <section id="home" className="min-h-[100vh] top-[25vh] relative">
         <Hero />
       </section>
       <section id="about" className="min-h-screen">
