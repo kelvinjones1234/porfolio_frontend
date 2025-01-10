@@ -42,9 +42,9 @@ const DesktopNav = () => {
           {/* Logo Section */}
           <div className="flex items-center gap-x-">
             <img src={logo} alt="Logo" className="h-10 w-auto" />
-            <h2 className="text-white text-xl font-bold">
-              Praise<span className="text-">Media</span>
-            </h2>
+              {/* <h2 className="text-white text-xl font-bold">
+                Praise<span className="text-">Media</span>
+              </h2> */}
           </div>
 
           {/* Navigation Links */}
@@ -79,7 +79,7 @@ const DesktopNav = () => {
                 {social.icon}
               </a>
             ))}
-            <button className="ml-6 px-4 py-2 text-sm uppercase tracking-wider border border-[#98e8cd] text-[#98e8cd] rounded-full hover:bg-[#98e8cd] hover:text-black transition-all duration-300">
+            <button className="ml-6 font-babas px-4 py-2 text-sm uppercase tracking-wider border border-[#98e8cd] text-[#98e8cd] rounded-full hover:bg-[#98e8cd] hover:text-black transition-all duration-300">
               Resume
             </button>
           </div>

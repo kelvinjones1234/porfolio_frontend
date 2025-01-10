@@ -260,9 +260,9 @@ const MobileNav = () => {
                 scrolled ? "scale-90" : "scale-100"
               }`}
             />
-            <h2 className="text-white text-xl font-bold ml-2">
+            {/* <h2 className="text-white text-xl font-bold ml-2">
               Praise<span className="text-[#98e8cd]">Media</span>
-            </h2>
+            </h2> */}
           </div>
           {/* Placeholder for spacing */}
           <div className="w-10 h-10" />

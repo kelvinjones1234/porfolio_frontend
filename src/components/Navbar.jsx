@@ -18,7 +18,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed w-full z-[20]">
+    <nav className="fixed w-full z-[20] font-babas">
       {isMobile ? <MobileNav /> : <DesktopNav />}
     </nav>
   );

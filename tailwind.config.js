@@ -12,6 +12,14 @@ export default {
         'lg': '1366px',   // Laptops
         'xl': '1920px',   // Large desktops
       },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        babas: ["Bebas Neue", "sans-serif"],
+        sans: ['Inter var', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Space Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
+
+      },
     },
   },
   plugins: [],

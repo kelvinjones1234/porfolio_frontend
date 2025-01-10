@@ -69,7 +69,7 @@ const Projects = () => {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2 rounded-full text-sm transition-all duration-300 ${
+              className={`px-6 py-2 font-babas rounded-full text-sm transition-all duration-300 ${
                 activeFilter === filter
                   ? "bg-[#98e8cd] text-black"
                   : "border border-[#98e8cd] text-[#98e8cd] hover:bg-[#98e8cd] hover:text-black"
@@ -139,7 +139,7 @@ const Projects = () => {
 
         {/* See More Projects Button */}
         <div className="text-center mt-12">
-          <button className="group hover:bg-[#98e8cd] hover:text-black transition-all duration-300 uppercase border-2 border-[#98e8cd] inline-flex text-sm rounded-full px-8 py-3 items-center gap-x-4 hover:gap-x-6">
+          <button className="group font-babas hover:bg-[#98e8cd] hover:text-black transition-all duration-300 uppercase border-2 border-[#98e8cd] inline-flex text-sm rounded-full px-8 py-3 items-center gap-x-4 hover:gap-x-6">
             <span>See More Projects</span>
             <LiaLongArrowAltRightSolid
               className="transition-transform group-hover:translate-x-2"

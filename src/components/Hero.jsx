@@ -33,7 +33,7 @@ const Hero = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="relative flex items-center px-4 sm:px-[2rem] md:px-[4rem] lg:px-[6rem] mx-auto text-white"
+      className="relative flex items-center font-roboto px-4 sm:px-[2rem] md:px-[4rem] lg:px-[6rem] mx-auto text-white"
     >
       {/* Background decoration */}
       <div className="absolute top-20 right-20 w-64 h-64 border-2 border-[#98e8cd] opacity-20 rounded-full" />
@@ -80,7 +80,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05, x: 10 }}
               whileTap={{ scale: 0.95 }}
-              className="group hover:bg-[#98e8cd] hover:text-black transition-all duration-300 uppercase border-2 border-[#98e8cd] inline-flex text-sm sm:text-base rounded-full px-6 sm:px-8 py-3 items-center gap-x-4 hover:gap-x-6"
+              className="group hover:bg-[#98e8cd] font-babas hover:text-black transition-all duration-300 uppercase border-2 border-[#98e8cd] inline-flex text-sm sm:text-base rounded-full px-6 sm:px-8 py-3 items-center gap-x-4 hover:gap-x-6"
             >
               <span>Work with me</span>
               <LiaLongArrowAltRightSolid

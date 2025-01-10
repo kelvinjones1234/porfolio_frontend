@@ -95,7 +95,7 @@ const About = () => {
                 { number: "99%", label: "Success Rate" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-2xl font-bold text-[#98e8cd]">
+                  <div className="text-2xl font-bold font-babas text-[#98e8cd]">
                     {stat.number}
                   </div>
                   <div className="text-sm text-gray-400 mt-1">{stat.label}</div>
