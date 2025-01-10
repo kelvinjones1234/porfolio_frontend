@@ -1,74 +1,3 @@
-// import React from "react";
-// import { LiaLongArrowAltRightSolid } from "react-icons/lia";
-// import DecorativeCodeSnippet from "./DecorativeCodeSnippet";
-
-// const Hero = () => (
-//   <section className="relative min-h-screen flex items-center z-[] px-4 sm:px-[2rem] md:px-[4rem] lg:px-[6rem] mx-auto text-white">
-//     {/* Background decoration */}
-//     {/* <div className="absolute top-0 right-0 w-1/2 h-[5000px] bg-gradient-to-l from-[#98e8cd1a] to-transparent" /> */}
-
-//     <div className="absolute top-20 right-20 w-64 h-64 border-2 border-[#98e8cd] opacity-20 rounded-full" />
-//     <div className="absolute top-40 right-40 w-32 h-32 bg-[#98e8cd] opacity-5 rounded-full" />
-
-//     {/* Grid pattern */}
-//     <div className="absolute right-0 top-0 h-screen w-1/3 opacity-10">
-//       <div className="grid grid-cols-4 gap-4 h-full w-full p-8">
-//         {[...Array(50)].map((_, i) => (
-//           <div
-//             key={i}
-//             className="w-2 h-2 bg-[#98e8cd] rounded-full transform transition-all duration-700 hover:scale-150"
-//             style={{
-//               animation: `pulse 2s ease-in-out ${i * 0.1}s infinite`,
-//             }}
-//           />
-//         ))}
-//       </div>
-//     </div>
-
-//     <div className="w-full flex justify-between items-center">
-//       <div className="max-w-3xl z-10">
-//         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wide leading-tight md:leading-tight lg:leading-tight font-light">
-//           Hi, I'm{" "}
-//           <span className="block mt-2 text-[#98e8cd] font-bold">
-//             Godwin Praise,
-//           </span>
-//         </h1>
-//         <p className="py-6 text-lg sm:text-xl md:text-2xl max-w-xl leading-relaxed text-gray-300">
-//           a Full Stack Web Developer crafting exceptional digital experiences.
-//         </p>
-//         <div className="mt-8 sm:mt-10">
-//           <button className="group hover:bg-[#98e8cd] hover:text-black transition-all duration-300 uppercase border-2 border-[#98e8cd] inline-flex text-sm sm:text-base rounded-full px-6 sm:px-8 py-3 items-center gap-x-4 hover:gap-x-6">
-//             <span>Work with me</span>
-//             <LiaLongArrowAltRightSolid
-//               className="transition-transform group-hover:translate-x-2"
-//               size={24}
-//             />
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* Decorative code snippet */}
-//       <DecorativeCodeSnippet />
-//     </div>
-
-//     <style jsx>{`
-//       @keyframes pulse {
-//         0%,
-//         100% {
-//           transform: scale(1);
-//           opacity: 0.5;
-//         }
-//         50% {
-//           transform: scale(1.5);
-//           opacity: 1;
-//         }
-//       }
-//     `}</style>
-//   </section>
-// );
-
-// export default Hero;
-
 import React from "react";
 import { motion } from "framer-motion";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
@@ -104,7 +33,7 @@ const Hero = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="relative min-h-screen flex items-center z-[] px-4 sm:px-[2rem] md:px-[4rem] lg:px-[6rem] mx-auto text-white"
+      className="relative h-screen flex items-center z-[] px-4 sm:px-[2rem] md:px-[4rem] lg:px-[6rem] mx-auto text-white"
     >
       {/* Background decoration */}
       <div className="absolute top-20 right-20 w-64 h-64 border-2 border-[#98e8cd] opacity-20 rounded-full" />

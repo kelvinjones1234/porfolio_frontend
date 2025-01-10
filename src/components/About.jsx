@@ -11,7 +11,7 @@ const About = () => {
   ];
 
   return (
-    <section className="relative md:pt-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="relative pt-[6rem] md:pt-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Background Elements */}
       <div className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-[#98e8cd1a] to-transparent opacity-50" />
       <div className="absolute -left-10 top-40 w-24 h-24 border border-[#98e8cd] opacity-10 rounded-full" />
