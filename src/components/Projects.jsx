@@ -1,45 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { Github, ExternalLink } from "lucide-react";
+import { GeneralDataContext } from "../context/GeneralContext";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filters = ["All", "Web App", "Frontend", "Full Stack"];
 
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description:
-        "A modern e-commerce solution with real-time inventory management and seamless payment integration.",
-      tags: ["Web App", "Full Stack"],
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "/api/placeholder/600/400",
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Task Management Dashboard",
-      description:
-        "Collaborative project management tool with real-time updates and analytics dashboard.",
-      tags: ["Web App", "Frontend"],
-      tech: ["Next.js", "TypeScript", "Tailwind", "Firebase"],
-      image: "/api/placeholder/600/400",
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Social Media Analytics",
-      description:
-        "Analytics platform providing insights and metrics for social media performance.",
-      tags: ["Full Stack"],
-      tech: ["React", "Python", "PostgreSQL", "AWS"],
-      image: "/api/placeholder/600/400",
-      github: "#",
-      live: "#",
-    },
-  ];
+  // Use projects data from the context
+  const { projects } = useContext(GeneralDataContext);
 
+  if (!projects) {
+    return <div>Loading projects...</div>; // Or a loading spinner
+  }
+
+  // Filter projects based on the active filter
   const filteredProjects = projects.filter(
     (project) => activeFilter === "All" || project.tags.includes(activeFilter)
   );
@@ -90,34 +66,38 @@ const Projects = () => {
               {/* Project Image */}
               <div className="relative overflow-hidden">
                 <img
-                  src={project.image}
-                  alt={project.title}
+                  src={`http://127.0.0.1:8000${project.image}`}
+                  alt={project.project_title}
                   className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                   <a
-                    href={project.github}
+                    href={project.git_link}
                     className="p-2 bg-white rounded-full text-black hover:bg-[#98e8cd] transition-colors duration-300"
                   >
                     <Github size={20} />
                   </a>
                   <a
-                    href={project.live}
+                    href={project.project_link}
                     className="p-2 bg-white rounded-full text-black hover:bg-[#98e8cd] transition-colors duration-300"
                   >
                     <ExternalLink size={20} />
                   </a>
                 </div>
               </div>
-
               {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold mb-2">
+                  {project.project_title}
+                </h3>
+                <p
+                  className="text-gray-400 mb-4"
+                  dangerouslySetInnerHTML={{ __html: project.description }}
+                />
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, i) => (
+                  {project.tech_used.map((tech, i) => (
                     <span
                       key={i}
                       className="text-xs px-2 py-1 bg-gray-800 rounded-full text-[#98e8cd]"
@@ -126,12 +106,6 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-
-                {/* View Details Button */}
-                {/* <button className="group inline-flex items-center gap-2 text-[#98e8cd] hover:gap-4 transition-all duration-300">
-                  <span>View Details</span>
-                  <LiaLongArrowAltRightSolid size={20} />
-                </button> */}
               </div>
             </div>
           ))}

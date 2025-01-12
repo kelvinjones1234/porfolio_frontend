@@ -1,14 +1,35 @@
 import React from "react";
+import { useContext } from "react";
+import { GeneralDataContext } from "../context/GeneralContext";
 
 const About = () => {
+  const { biodata, technicalExpertise, credits } =
+    useContext(GeneralDataContext);
+
+  console.log(technicalExpertise);
+
   const skills = [
     {
-      name: "Frontend",
-      items: ["React", "Tailwind CSS", "JavaScript"],
+      stack: "Frontend",
+      items: [],
     },
-    { name: "Backend", items: ["Python", "Django", "PostgreSQL"] },
-    { name: "Tools", items: ["Git", "DjangoRest"] },
+    {
+      stack: "Backend",
+      items: [],
+    },
+    {
+      stack: "Tools",
+      items: [],
+    },
   ];
+
+  // Populate skills based on technicalExpertise
+  technicalExpertise.forEach((expertise) => {
+    const category = skills.find((skill) => skill.stack === expertise.stack);
+    if (category) {
+      category.items.push(expertise.name);
+    }
+  });
 
   return (
     <section className="relative pt-[6rem] md:pt-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -39,22 +60,18 @@ const About = () => {
         <div className="text-white">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
             About <br className="md:hidden" />{" "}
-            <span className="text-[#98e8cd]">Godwin Praise</span>
+            <span className="text-[#98e8cd]">
+              {biodata ? biodata.full_name : ""}
+            </span>
           </h2>
 
           <div className="space-y-6 text-gray-300">
-            <p className="text-lg leading-relaxed">
-              I'm a passionate Full Stack Developer with a keen eye for creating
-              elegant solutions to complex problems. With years of experience in
-              web development, I specialize in building scalable applications
-              that deliver exceptional user experiences.
-            </p>
-
-            <p className="text-lg leading-relaxed">
-              My approach combines technical expertise with creative
-              problem-solving, ensuring that every project I undertake not only
-              meets but exceeds expectations.
-            </p>
+            <p
+              className="text-lg leading-relaxed"
+              dangerouslySetInnerHTML={{
+                __html: biodata ? biodata.about : "",
+              }}
+            />
 
             {/* Skills Section */}
             <div className="mt-12">
@@ -64,16 +81,16 @@ const About = () => {
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {skills.map((category) => (
                   <div
-                    key={category.name}
+                    key={category.stack}
                     className="bg-gray-900 bg-opacity-50 p-4 rounded-lg border border-gray-800"
                   >
                     <h4 className="text-[#98e8cd] font-medium mb-3">
-                      {category.name}
+                      {category.stack}
                     </h4>
                     <ul className="space-y-2">
-                      {category.items.map((item) => (
+                      {category.items.map((item, index) => (
                         <li
-                          key={item}
+                          key={index}
                           className="text-gray-400 flex items-center"
                         >
                           <span className="w-1.5 h-1.5 bg-[#98e8cd] rounded-full mr-2" />
@@ -89,10 +106,22 @@ const About = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12">
               {[
-                { number: "5+", label: "Years Experience" },
-                { number: "50+", label: "Projects Completed" },
-                { number: "30+", label: "Happy Clients" },
-                { number: "99%", label: "Success Rate" },
+                {
+                  number: biodata ? biodata.experience : "",
+                  label: "Years Experience",
+                },
+                {
+                  number: credits ? credits.project_completed : "",
+                  label: "Projects Completed",
+                },
+                {
+                  number: credits ? credits.happy_clients : "",
+                  label: "Happy Clients",
+                },
+                {
+                  number: credits ? credits.success_rate : "",
+                  label: "Success Rate",
+                },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-2xl font-bold font-babas text-[#98e8cd]">

@@ -1,9 +1,13 @@
 import React from "react";
+import { useContext } from "react";
 import { motion } from "framer-motion";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import DecorativeCodeSnippet from "./DecorativeCodeSnippet";
+import { GeneralDataContext } from "../context/GeneralContext";
 
 const Hero = () => {
+  const { biodata } = useContext(GeneralDataContext);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -65,7 +69,7 @@ const Hero = () => {
               variants={slideFromLeft}
               className="block mt-2 text-[#98e8cd] font-bold"
             >
-              Godwin Praise,
+              {biodata ? biodata.full_name : ""}
             </motion.span>
           </motion.h1>
 

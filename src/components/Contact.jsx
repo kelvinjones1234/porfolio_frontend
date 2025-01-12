@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import {
   Mail,
   Phone,
@@ -9,34 +10,39 @@ import {
   InstagramIcon,
 } from "lucide-react";
 
+import { GeneralDataContext } from "../context/GeneralContext";
+
 const Contact = () => {
+  const { biodata, socials } = useContext(GeneralDataContext);
+
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      content: "chukwuemekagodwinpraise@gmail.com",
-      link: "mailto:chukwuemekagodwinpraise@gmail.com",
+      content: biodata?.email || "",
+      link: `mailto:${biodata?.email || ""}`,
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      content: "tel:+234-814-1772-672",
-      link: "tel:+234-814-1772-672",
+      content: biodata?.tel || "",
+      link: `tel:${biodata?.tel || ""}`,
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      content: "Abuja, Nigeria",
+      content: biodata?.address || "",
       link: "#",
     },
   ];
 
-  const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, href: "#" },
-    { icon: <Linkedin className="w-5 h-5" />, href: "#" },
-    { icon: <Twitter className="w-5 h-5" />, href: "#" },
-    { icon: <InstagramIcon className="w-5 h-5" />, href: "#" },
-  ];
+  // Map social media icons to their respective components
+  const socialIcons = {
+    github: <Github className="w-5 h-5" />,
+    linkedin: <Linkedin className="w-5 h-5" />,
+    twitter: <Twitter className="w-5 h-5" />,
+    instagram: <InstagramIcon className="w-5 h-5" />,
+  };
 
   return (
     <section className="w-full py-8 sm:py-16">
@@ -152,17 +158,17 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h3 className="text-base font-medium text-white mb-4">
+              <h3 className="font-babas font-medium text-gray-400 mb-4">
                 Connect with me
               </h3>
               <div className="flex flex-wrap gap-3">
-                {socialLinks.map((social, index) => (
+                {socials.map((social, index) => (
                   <a
                     key={index}
-                    href={social.href}
+                    href={social.link}
                     className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-[#98e8cd] hover:text-black transition-all duration-300"
                   >
-                    {social.icon}
+                    {socialIcons[social.social_media.toLowerCase()]}
                   </a>
                 ))}
               </div>
