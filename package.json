@@ -10,12 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fontsource/fira-code": "^5.1.1",
     "@fontsource/inter": "^5.1.1",
     "@fontsource/jetbrains-mono": "^5.1.2",
     "@fontsource/plus-jakarta-sans": "^5.1.1",
     "@fontsource/space-grotesk": "^5.1.1",
     "axios": "^1.7.9",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^11.16.2",
     "lucide-react": "^0.469.0",
     "react": "^18.3.1",
