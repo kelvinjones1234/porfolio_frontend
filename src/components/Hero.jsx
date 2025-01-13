@@ -81,17 +81,23 @@ const Hero = () => {
           </motion.p>
 
           <motion.div variants={slideFromLeft} className="sm:mt-[6vh]">
-            <motion.button
-              whileHover={{ scale: 1.05, x: 10 }}
-              whileTap={{ scale: 0.95 }}
-              className="group hover:bg-[#98e8cd] font-babas hover:text-black transition-all duration-300 uppercase border-2 border-[#98e8cd] inline-flex text-sm sm:text-base rounded-full px-6 sm:px-8 py-3 items-center gap-x-4 hover:gap-x-6"
+            <a
+              href="https://wa.link/fiukce" // Add the WhatsApp link here
+              target="_blank" // Open the link in a new tab
+              rel="noopener noreferrer" // Recommended for security
             >
-              <span>Work with me</span>
-              <LiaLongArrowAltRightSolid
-                className="transition-transform group-hover:translate-x-2"
-                size={24}
-              />
-            </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05, x: 10 }}
+                whileTap={{ scale: 0.95 }}
+                className="group hover:bg-[#98e8cd] font-babas hover:text-black transition-all duration-300 uppercase border-2 border-[#98e8cd] inline-flex text-sm sm:text-base rounded-full px-6 sm:px-8 py-3 items-center gap-x-4 hover:gap-x-6"
+              >
+                <span>Work with me</span>
+                <LiaLongArrowAltRightSolid
+                  className="transition-transform group-hover:translate-x-2"
+                  size={24}
+                />
+              </motion.button>
+            </a>
           </motion.div>
         </div>
 
