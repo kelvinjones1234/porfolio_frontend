@@ -140,7 +140,7 @@ const Contact = () => {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl text-white font-bold mb-6">
-            Contact <span className="text-[#98e8cd]">Information</span>
+            Connect With <span className="text-[#98e8cd]">Me</span>
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg">
             I welcome opportunities for collaboration and professional

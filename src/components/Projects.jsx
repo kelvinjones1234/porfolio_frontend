@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { Github, ExternalLink } from "lucide-react";
 import { GeneralDataContext } from "../context/GeneralContext";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -40,7 +41,7 @@ const Projects = () => {
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* <div className="flex flex-wrap justify-center gap-4 mb-12">
           {filters.map((filter) => (
             <button
               key={filter}
@@ -54,7 +55,7 @@ const Projects = () => {
               {filter}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -113,13 +114,16 @@ const Projects = () => {
 
         {/* See More Projects Button */}
         <div className="text-center mt-12">
-          <button className="group font-babas hover:bg-[#98e8cd] hover:text-black transition-all duration-300 uppercase border-2 border-[#98e8cd] inline-flex text-sm rounded-full px-8 py-3 items-center gap-x-4 hover:gap-x-6">
+          <Link
+            to={"/more-projects/"}
+            className="group font-babas hover:bg-[#98e8cd] hover:text-black transition-all duration-300 uppercase border-2 border-[#98e8cd] inline-flex text-sm rounded-full px-8 py-3 items-center gap-x-4 hover:gap-x-6"
+          >
             <span>See More Projects</span>
             <LiaLongArrowAltRightSolid
               className="transition-transform group-hover:translate-x-2"
               size={24}
             />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

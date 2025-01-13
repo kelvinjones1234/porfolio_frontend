@@ -1,16 +1,17 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Github, Linkedin, Twitter, InstagramIcon } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { RiMenu3Fill } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 import logo from "../assets/img/4.svg";
 import { GeneralDataContext } from "../context/GeneralContext";
+import { Link as ScrollLink } from "react-scroll"; // Import ScrollLink from react-scroll
 
 const MobileNav = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const menuItems = [
-    { name: "Home", id: "" },
+    { name: "Home", id: "home" }, // Use section IDs
     { name: "About", id: "about" },
     { name: "Projects", id: "projects" },
     { name: "Contact", id: "contact" },
@@ -22,7 +23,7 @@ const MobileNav = () => {
     github: <Github className="w-5 h-5" />,
     linkedin: <Linkedin className="w-5 h-5" />,
     twitter: <Twitter className="w-5 h-5" />,
-    instagram: <InstagramIcon className="w-5 h-5" />,
+    instagram: <Instagram className="w-5 h-5" />,
   };
 
   useEffect(() => {
@@ -86,9 +87,6 @@ const MobileNav = () => {
                 scrolled ? "scale-90" : "scale-100"
               }`}
             />
-            {/* <h2 className="text-white text-xl font-bold ml-2">
-              Praise<span className="text-[#98e8cd]">Media</span>
-            </h2> */}
           </div>
           {/* Placeholder for spacing */}
           <div className="w-10 h-10" />
@@ -116,10 +114,13 @@ const MobileNav = () => {
           <div className="flex-1 overflow-y-auto py-20 px-6">
             <div className="space-y-8">
               {menuItems.map((item, index) => (
-                <a
+                <ScrollLink
                   key={item.name}
-                  href={`#${item.id}`}
-                  className={`block text-lg font-medium text-gray-400 hover:text-[#98e8cd] transition-all duration-300 transform ${
+                  to={item.id} // Use react-scroll's `to` prop
+                  smooth={true} // Enable smooth scrolling
+                  duration={500} // Scroll duration in milliseconds
+                  offset={-80} // Offset for fixed header (adjust as needed)
+                  className={`block text-lg font-medium text-gray-400 hover:text-[#98e8cd] transition-all duration-300 transform cursor-pointer ${
                     menuToggle
                       ? "translate-x-0 opacity-100"
                       : "translate-x-8 opacity-0"
@@ -132,7 +133,7 @@ const MobileNav = () => {
                   onClick={() => setMenuToggle(false)}
                 >
                   {item.name}
-                </a>
+                </ScrollLink>
               ))}
 
               <button
@@ -158,9 +159,6 @@ const MobileNav = () => {
           >
             <p className="text-sm text-gray-400 mb-4">Connect with me</p>
             <div>
-              {/* <h3 className="text-base font-medium text-white mb-4">
-                Connect with me
-              </h3> */}
               <div className="flex flex-wrap gap-3">
                 {socials.map((social, index) => (
                   <a

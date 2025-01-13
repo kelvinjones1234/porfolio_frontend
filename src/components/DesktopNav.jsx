@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Twitter, InstagramIcon } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import logo from "../assets/img/4.svg";
+import { Link as ScrollLink } from "react-scroll"; // Import ScrollLink from react-scroll
 
 const DesktopNav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("Home");
 
   const menuItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", to: "home" }, // Use section IDs
+    { name: "About", to: "about" },
+    { name: "Projects", to: "projects" },
+    { name: "Contact", to: "contact" },
   ];
 
   const socialLinks = [
     { icon: <Github className="w-5 h-5" />, href: "#" },
     { icon: <Linkedin className="w-5 h-5" />, href: "#" },
     { icon: <Twitter className="w-5 h-5" />, href: "#" },
-    { icon: <InstagramIcon className="w-5 h-5" />, href: "#" },
+    { icon: <Instagram className="w-5 h-5" />, href: "#" },
   ];
 
   useEffect(() => {
@@ -42,18 +43,18 @@ const DesktopNav = () => {
           {/* Logo Section */}
           <div className="flex items-center gap-x-">
             <img src={logo} alt="Logo" className="h-10 w-auto" />
-              {/* <h2 className="text-white text-xl font-bold">
-                Praise<span className="text-">Media</span>
-              </h2> */}
           </div>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-x-1">
             {menuItems.map((item) => (
-              <a
+              <ScrollLink
                 key={item.name}
-                href={item.href}
-                className={`relative px-4 py-2 text-sm uppercase tracking-wider transition-all duration-300 hover:text-[#98e8cd] ${
+                to={item.to} // Use react-scroll's `to` prop
+                smooth={true} // Enable smooth scrolling
+                duration={500} // Scroll duration in milliseconds
+                offset={-80} // Offset for fixed header (adjust as needed)
+                className={`relative px-4 py-2 text-sm uppercase tracking-wider transition-all duration-300 hover:text-[#98e8cd] cursor-pointer ${
                   activeSection === item.name
                     ? "text-[#98e8cd]"
                     : "text-gray-300"
@@ -61,10 +62,7 @@ const DesktopNav = () => {
                 onClick={() => setActiveSection(item.name)}
               >
                 {item.name}
-                {/* {activeSection === item.name && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#98e8cd] transform scale-x-100 transition-transform duration-300" />
-                )} */}
-              </a>
+              </ScrollLink>
             ))}
           </div>
 
