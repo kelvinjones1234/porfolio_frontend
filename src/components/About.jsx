@@ -45,7 +45,7 @@ const About = () => {
             {/* Placeholder for profile image */}
             <div className="w-full h-full bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden">
               <img
-                src={`http://127.0.0.1:8000${
+                src={`https://praisemediaportfolio.pythonanywhere.com/${
                   biodata ? biodata.profile_pic : ""
                 }`}
                 alt="Godwin Praise"

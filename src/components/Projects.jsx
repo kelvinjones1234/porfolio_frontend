@@ -67,7 +67,7 @@ const Projects = () => {
               {/* Project Image */}
               <div className="relative overflow-hidden">
                 <img
-                  src={`http://127.0.0.1:8000${project.image}`}
+                  src={`https://praisemediaportfolio.pythonanywhere.com/${project.image}`}
                   alt={project.project_title}
                   className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300"
                 />
