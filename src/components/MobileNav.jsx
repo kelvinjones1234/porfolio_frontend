@@ -52,6 +52,8 @@ const MobileNav = () => {
     };
   }, [menuToggle]);
 
+
+
   return (
     <>
       {/* Menu Toggle Button - Positioned above everything */}
@@ -138,7 +140,9 @@ const MobileNav = () => {
 
               <div className="py-[4vh] grid justify-center">
                 <a
-                  href="http://127.0.0.1:8000/media/My_Resume_for_mailing.pdf"
+                  href={`https://praisemediaportfolio.pythonanywhere.com/${
+                    biodata ? biodata.resume : ""
+                  }`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full px-16 py-3 text-sm uppercase tracking-wider border border-[#98e8cd] text-[#98e8cd] rounded-full hover:bg-[#98e8cd] hover:text-black transition-all duration-300 transform ${
