@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import logo from "../assets/img/4.svg";
 import { Link as ScrollLink } from "react-scroll"; // Import ScrollLink from react-scroll
+import { GeneralDataContext } from "../context/GeneralContext";
 
 const DesktopNav = () => {
+  const {biodata} = useContext(GeneralDataContext)
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("Home");
 
@@ -67,12 +69,12 @@ const DesktopNav = () => {
           </div>
 
           {/* Social Links */}
-          <div className="hidden lg:flex items-center gap-x-4">
+          <div className="flex items-center gap-x-4">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
                 href={social.href}
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-[#98e8cd] hover:text-black transition-all duration-300"
+                className="w-10 h-10 bg-gray-800 hidden icon:flex rounded-lg items-center justify-center text-gray-400 hover:bg-[#98e8cd] hover:text-black transition-all duration-300"
               >
                 {social.icon}
               </a>
@@ -83,7 +85,7 @@ const DesktopNav = () => {
               }`}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-6 font-babas px-4 py-2 text-sm uppercase tracking-wider border border-[#98e8cd] text-[#98e8cd] rounded-full hover:bg-[#98e8cd] hover:text-black transition-all duration-300"
+              className="ml-6 font-babas px-4 py-2 text-sm hidden md:block uppercase tracking-wider border border-[#98e8cd] text-[#98e8cd] rounded-full hover:bg-[#98e8cd] hover:text-black transition-all duration-300"
             >
               Resume
             </a>
