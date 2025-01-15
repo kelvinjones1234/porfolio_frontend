@@ -77,9 +77,14 @@ const DesktopNav = () => {
                 {social.icon}
               </a>
             ))}
-            <button className="ml-6 font-babas px-4 py-2 text-sm uppercase tracking-wider border border-[#98e8cd] text-[#98e8cd] rounded-full hover:bg-[#98e8cd] hover:text-black transition-all duration-300">
+            <a
+              href="http://127.0.0.1:8000/media/My_Resume_for_mailing.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-6 font-babas px-4 py-2 text-sm uppercase tracking-wider border border-[#98e8cd] text-[#98e8cd] rounded-full hover:bg-[#98e8cd] hover:text-black transition-all duration-300"
+            >
               Resume
-            </button>
+            </a>
           </div>
         </div>
       </div>

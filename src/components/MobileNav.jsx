@@ -136,16 +136,21 @@ const MobileNav = () => {
                 </ScrollLink>
               ))}
 
-              <button
-                className={`w-full px-6 py-3 mt-6 text-sm uppercase tracking-wider border border-[#98e8cd] text-[#98e8cd] rounded-full hover:bg-[#98e8cd] hover:text-black transition-all duration-300 transform ${
-                  menuToggle
-                    ? "translate-x-0 opacity-100"
-                    : "translate-x-8 opacity-0"
-                }`}
-                style={{ transitionDelay: menuToggle ? "350ms" : "0ms" }}
-              >
-                Download Resume
-              </button>
+              <div className="py-[4vh] grid justify-center">
+                <a
+                  href="http://127.0.0.1:8000/media/My_Resume_for_mailing.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full px-16 py-3 text-sm uppercase tracking-wider border border-[#98e8cd] text-[#98e8cd] rounded-full hover:bg-[#98e8cd] hover:text-black transition-all duration-300 transform ${
+                    menuToggle
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: menuToggle ? "350ms" : "0ms" }}
+                >
+                  Download Resume
+                </a>
+              </div>
             </div>
           </div>
 
