@@ -132,7 +132,7 @@ const Contact = () => {
     github: <Github className="w-5 h-5" />,
     linkedin: <Linkedin className="w-5 h-5" />,
     twitter: <Twitter className="w-5 h-5" />,
-    instagram: <Instagram className="w-5 h-5" />,
+    // instagram: <Instagram className="w-5 h-5" />,
   };
 
   return (

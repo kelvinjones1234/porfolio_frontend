@@ -20,7 +20,7 @@ const DesktopNav = () => {
     { icon: <Github className="w-5 h-5" />, href: "#" },
     { icon: <Linkedin className="w-5 h-5" />, href: "#" },
     { icon: <Twitter className="w-5 h-5" />, href: "#" },
-    { icon: <Instagram className="w-5 h-5" />, href: "#" },
+    // { icon: <Instagram className="w-5 h-5" />, href: "#" },
   ];
 
   useEffect(() => {
